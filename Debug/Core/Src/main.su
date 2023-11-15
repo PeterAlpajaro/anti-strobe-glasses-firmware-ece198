@@ -1,0 +1,14 @@
+C:\ST\STM32CubeIDE_1.13.2\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.1.202309131626\tools\arm-none-eabi\include\c++\11.3.1\arm-none-eabi\thumb\v7e-m+fp\hard\bits\gthr-default.h:229:1:int __gthread_key_delete(__gthread_key_t)	16	static
+../Core/Src/main.cpp:74:5:int main()	136	static
+../Core/Src/main.cpp:191:6:void SystemClock_Config()	88	static
+../Core/Src/main.cpp:238:13:void MX_ADC1_Init()	24	static
+../Core/Src/main.cpp:290:13:void MX_USART2_UART_Init()	8	static
+../Core/Src/main.cpp:323:13:void MX_GPIO_Init()	48	static
+../Core/Src/main.cpp:367:6:void blind(bool)	48	static
+../Core/Src/main.cpp:393:6:void sight(bool)	48	static
+../Core/Src/main.cpp:419:6:void increment(int*, int)	16	static
+../Core/Src/main.cpp:432:5:int my_abs(int)	16	static
+../Core/Src/main.cpp:453:6:void Error_Handler()	4	static,ignoring_inline_asm
+../Core/Src/main.cpp:462:1:void __static_initialization_and_destruction_0(int, int)	16	static
+../Core/Src/main.cpp:462:1:cpp)	8	static
+../Core/Src/main.cpp:462:1:cpp)	8	static
