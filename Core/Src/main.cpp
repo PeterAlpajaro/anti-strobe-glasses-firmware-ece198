@@ -581,7 +581,7 @@ int main(void)
   /* USER CODE BEGIN 2 */
 
   int const FLASH_COUNT = 12;
-  int const AVERAGE_THRESHOLD = 200;
+  int const AVERAGE_THRESHOLD = 40;
   int const SENSOR_DELAY = 1;
   int const REFRESH_DELAY = 5000;
 
