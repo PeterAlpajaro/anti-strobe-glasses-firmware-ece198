@@ -1,1 +1,1 @@
-# anti-stroe-glasses-firmware-ece198
+# anti-strobe-glasses-firmware-ece198
