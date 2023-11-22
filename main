@@ -1,0 +1,95 @@
+[33mcommit 50988cfa444251e541867ed571d716d659f4da52[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain_merge[m[33m)[m
+Merge: fc4204c 4c07177
+Author: Cathouwu <62555400+Cathouwu@users.noreply.github.com>
+Date:   Tue Nov 21 23:24:46 2023 -0500
+
+    Merge pull request #5 from PeterAlpajaro/merge
+    
+    Renamed project file to match file name, added minimum light to trigg…
+
+[33mcommit 4c07177649fb5985208aca51d01ecfd0add82814[m[33m ([m[1;31morigin/merge[m[33m)[m
+Merge: f4d9a54 fc4204c
+Author: Peter A <130109439+PeterAlpajaro@users.noreply.github.com>
+Date:   Tue Nov 21 23:18:08 2023 -0500
+
+    Merge branch 'main' into merge
+
+[33mcommit f4d9a54fcfd82d9f31aa541699ce9d0628a61bb6[m
+Author: unknown <peter.alpajarojr@gmail.com>
+Date:   Tue Nov 21 22:53:45 2023 -0500
+
+    Renamed project file to match file name, added minimum light to trigger due to fluctuations in the photoresistor in low light conditions
+
+[33mcommit fc4204c202b38b796a987f3eb5f3d5744e9892cb[m[33m ([m[1;31morigin/main_merge[m[33m)[m
+Merge: 48c0dcf 4f2dea7
+Author: Peter A <130109439+PeterAlpajaro@users.noreply.github.com>
+Date:   Wed Nov 15 00:37:28 2023 -0500
+
+    Merge pull request #4 from PeterAlpajaro/main_merge
+    
+    Reduced the refresh delay
+
+[33mcommit 4f2dea7e15fb84e5a34628669de165893d1da15b[m[33m ([m[1;32mremove[m[33m)[m
+Author: unknown <peter.alpajarojr@gmail.com>
+Date:   Wed Nov 15 00:35:25 2023 -0500
+
+    Reduced the refresh delay to 1000 (1000 light checks until the glasses allow themselves to reblind themselves.
+
+[33mcommit 48c0dcfc644ccaeb89a7543480a657b3714b400c[m
+Merge: 885c752 a8a9c86
+Author: Peter A <130109439+PeterAlpajaro@users.noreply.github.com>
+Date:   Wed Nov 15 00:29:44 2023 -0500
+
+    Merge pull request #3 from PeterAlpajaro/main_merge
+    
+    Reducing average threshold.
+
+[33mcommit a8a9c869727c25e4211073978f5b4d5b4c5dc3ce[m
+Author: unknown <peter.alpajarojr@gmail.com>
+Date:   Wed Nov 15 00:27:58 2023 -0500
+
+    Reducing average threshold. This increases the slope threshold that the glasses much reach to activate.
+
+[33mcommit 885c75289edd5593c3b6a1fe9044f6c4c74b0bb6[m
+Merge: a84d3a4 fdd2ec8
+Author: Peter A <130109439+PeterAlpajaro@users.noreply.github.com>
+Date:   Wed Nov 15 00:25:48 2023 -0500
+
+    Merge pull request #2 from PeterAlpajaro/main_merge
+    
+    Flash count update
+
+[33mcommit fdd2ec8a3b7e5f7edd30983e88e074729a4b3d3b[m
+Author: unknown <peter.alpajarojr@gmail.com>
+Date:   Wed Nov 15 00:24:33 2023 -0500
+
+    Updating flash count to take the slope average over a greater number of points, smoothing the curve and considering a larger time interval when calculating slopes. This will decrease the noise sensitivity of the glasses.
+
+[33mcommit a84d3a466aeb5fc2ca5d4b40cd657884d5c35273[m
+Merge: 4a31d39 5fe32bc
+Author: Peter A <130109439+PeterAlpajaro@users.noreply.github.com>
+Date:   Wed Nov 15 00:09:08 2023 -0500
+
+    Merge pull request #1 from PeterAlpajaro/PeterAlpajaro-patch-1
+    
+    Update README.md
+
+[33mcommit 5fe32bcc0ae7e286eab1a70fa993bba9f6603e68[m[33m ([m[1;31morigin/PeterAlpajaro-patch-1[m[33m)[m
+Author: Peter A <130109439+PeterAlpajaro@users.noreply.github.com>
+Date:   Wed Nov 15 00:08:26 2023 -0500
+
+    Update README.md
+    
+    Spelling mistake
+
+[33mcommit 4a31d398806cb98eef32f4fb1dc74791a3c22653[m
+Author: unknown <peter.alpajarojr@gmail.com>
+Date:   Wed Nov 15 00:05:06 2023 -0500
+
+    Correcting Error -- This is the original version of the firmware as outlined in the design document
+
+[33mcommit b503fa0b5e351b63c2a25d35f5b3e024cd4d1643[m
+Author: unknown <peter.alpajarojr@gmail.com>
+Date:   Wed Nov 15 00:00:32 2023 -0500
+
+    Adding 1.0 firmware to the git repository.

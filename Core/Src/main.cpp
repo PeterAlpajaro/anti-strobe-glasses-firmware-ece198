@@ -107,6 +107,7 @@ int main(void)
 
 
   int slope_arr[FLASH_COUNT];
+  int slope_arr_neg[FLASH_COUNT];
   int stored_intensity = 50000; // Large initial value to assign the initial value, ensures that a turning point will be marked on the first step.
   int previous_intensity = 0;
   int blind_count = 0;
@@ -115,6 +116,7 @@ int main(void)
   char msg[20];
   int lux = 0;
   int i = 0;
+  int j = 0;
 
   /* USER CODE END 2 */
 
@@ -126,14 +128,14 @@ int main(void)
 	  std::cout << "Goodbye World!" << std::endl;
 
 	  HAL_ADC_Start(&hadc1);
-	  HAL_ADC_PollForConversion(&hadc1,20);
+	  HAL_ADC_PollForConversion(&hadc1, HAL_MAX_DELAY);
 	  lux = HAL_ADC_GetValue(&hadc1);
 	  sprintf(msg,"light: %hu \r\n", lux);
-	  HAL_UART_Transmit(&huart2,(uint8_t*)msg, strlen(msg),HAL_MAX_DELAY);
+	  HAL_UART_Transmit(&huart2,(uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
 	  HAL_Delay(SENSOR_DELAY);//500ms
 
 	  // Finds a turning point.
-	  if ((increasing && lux < stored_intensity) || (!increasing && lux > stored_intensity)) {
+	  if ((increasing && lux < stored_intensity)) {
 
 		  slope_arr[i] = my_abs(stored_intensity - previous_intensity);
 		  increment(&i, FLASH_COUNT);
@@ -143,22 +145,34 @@ int main(void)
 
 	  }
 
+	  if ((!increasing && lux > stored_intensity)) {
+
+		  slope_arr_neg[j] = my_abs(stored_intensity - previous_intensity);
+		  increment(&i, FLASH_COUNT);
+
+		  previous_intensity = stored_intensity;
+		  increasing = 1;
+
+	  }
+
 	  stored_intensity = lux;
 
 	 int sum = 0;
+	 int sum_neg = 0;
 	 // Calculate the average of all slopes.
-	 for (int i = 0; i < FLASH_COUNT; ++i) {
+	 for (int k = 0; k < FLASH_COUNT; ++k) {
 
-		 	sum += slope_arr[i];
+		 	sum += slope_arr[k];
+		 	sum_neg -= slope_arr_neg[k];
 
 	 }
 
 	 sprintf(msg, "slope_value: %hu \r\n", (sum/FLASH_COUNT));
 	 HAL_UART_Transmit(&huart2,(uint8_t*)msg, strlen(msg),HAL_MAX_DELAY);
-
+	 sprintf(msg, "slope_value_neg: %hu \r\n", (sum_neg)/FLASH_COUNT);
 	 HAL_UART_Transmit(&huart2,(uint8_t*)msg, strlen(msg),HAL_MAX_DELAY);
 
-	 if (sum / FLASH_COUNT > AVERAGE_THRESHOLD && vision_state && lux > 2000) {
+	 if (sum / FLASH_COUNT > AVERAGE_THRESHOLD && vision_state && lux > 2000 && sum_neg > AVERAGE_THRESHOLD) {
 
 		 blind(vision_state);
 		 vision_state = false;
